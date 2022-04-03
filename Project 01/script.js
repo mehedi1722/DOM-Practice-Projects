@@ -6,20 +6,24 @@
 // STEP 02: GENERATE A RANDOM COLOR 
 // STEP 03: SET THE BACKGROUD 
 
-const Button = document.getElementById("change-btn");
+window.onload = () => main();
 
-Button.addEventListener('click', () => {
+function main() {
     const Root = document.getElementById("root");
-    const BackgroundColor = GenerateColor();
-    Root.style.background = BackgroundColor;
-    
-})
+    const Button = document.getElementById("change-btn");
 
-const GenerateColor = () => {
-    const red = Math.floor(Math.random() * 255) + 1;
-    const green = Math.floor(Math.random() * 255) + 1;
-    const blue = Math.floor(Math.random() * 255) + 1;
+    Button.addEventListener('click', () => {
+        const BackgroundColor = GenerateColor();
+        Root.style.background = BackgroundColor;
+        
+    })
 
-    let RGB = `rgb(${red}, ${green}, ${blue})`;
-    return RGB;
+    const GenerateColor = () => {
+        const red = Math.floor(Math.random() * 255) + 1;
+        const green = Math.floor(Math.random() * 255) + 1;
+        const blue = Math.floor(Math.random() * 255) + 1;
+
+        let RGB = `rgb(${red}, ${green}, ${blue})`;
+        return RGB;
+    }
 }
